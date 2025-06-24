@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome da Instituição</title>
+    <style>
+        /* Estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Cores padrão */
+        :root {
+            --primary: #0b5fff;
+            --secondary: #6610f2;
+            --accent: #004ad7;
+        }
+        
+        /* Container principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        /* Menu e botões */
+        .menu {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-voltar {
+            background-color: #eee;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Conteúdo principal */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .resumo {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        /* Páginas específicas */
+        .pagina {
+            display: none;
+        }
+        
+        .pagina.ativa {
+            display: block;
+        }
+        
+        /* Imagens e informações */
+        .imagem-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .imagem-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .imagem-info {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Listas de cursos e campus */
+        .lista-cursos, .lista-campus {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        .lista-cursos li, .lista-campus li {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .lista-cursos li:last-child, .lista-campus li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Rodapé */
+        footer {
+            margin-top: 50px;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Página 1 - Home -->
+        <div id="home" class="pagina ativa">
+            <header>
+                <div class="logo">NOME DA INSTITUIÇÃO</div>
+                <div class="menu">
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+            </header>
+            
+            <div class="main-content">
+                <div style="text-align: center; margin-top: 100px;">
+                    <h1>Bem-vindo à nossa instituição</h1>
+                    <p style="margin: 30px 0;">Conheça mais sobre nós e nossos serviços</p>
+                    <button class="btn btn-primary" onclick="mostrarPagina('sobre')">ACESSAR INFORMAÇÕES</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Página 2 - Sobre -->
+        <div id="sobre" class="pagina">
+            <header>
+                <div class="logo">NOME DA INSTITUIÇÃO</div>
+                <div class="menu">
+                    <button class="btn btn-voltar" onclick="mostrarPagina('home')">P. VOLTAR</button>
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+            </header>
+            
+            <div class="main-content">
+                <div class="menu" style="margin-bottom: 30px;">
+                    <button class="btn btn-secondary" onclick="mostrarPagina('historia')">BOTÃO 1</button>
+                    <button class="btn btn-secondary" onclick="mostrarPagina('cursos')">BOTÃO 2</button>
+                    <button class="btn btn-secondary" onclick="mostrarPagina('campus')">BOTÃO 3</button>
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+                
+                <div class="resumo">
+                    <h2>RESUMO DA INSTITUIÇÃO</h2>
+                    <p>Texto resumido sobre a instituição, sua missão, visão e valores.</p>
+                </div>
+                
+                <div class="imagem-container">
+                    <img src="https://via.placeholder.com/800x400?text=IMAGEM+1" alt="Imagem 1">
+                    <p class="imagem-info">INFORMAÇÃO DA IMAGEM 1</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Página 3 - História -->
+        <div id="historia" class="pagina">
+            <header>
+                <div class="logo">NOME DA INSTITUIÇÃO</div>
+                <div class="menu">
+                    <button class="btn btn-voltar" onclick="mostrarPagina('sobre')">P. VOLTAR</button>
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+            </header>
+            
+            <div class="main-content">
+                <h2>TEXTO CONTANDO A HISTORIA [BOTÃO 1]</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl. Nullam auctor, nisl eget ultricies tincidunt, nisl nisl aliquam nisl, eget ultricies nisl nisl eget nisl.</p>
+                
+                <div class="imagem-container">
+                    <img src="https://via.placeholder.com/800x400?text=IMAGEM+2" alt="Imagem 2">
+                    <p class="imagem-info">INFORMAÇÃO DA IMAGEM 2</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Página 4 - Cursos -->
+        <div id="cursos" class="pagina">
+            <header>
+                <div class="logo">NOME DA INSTITUIÇÃO</div>
+                <div class="menu">
+                    <button class="btn btn-voltar" onclick="mostrarPagina('sobre')">P. VOLTAR</button>
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+            </header>
+            
+            <div class="main-content">
+                <h2>CURSOS [BOTÃO 2]</h2>
+                <ul class="lista-cursos">
+                    <li>Curso 1</li>
+                    <li>Curso 2</li>
+                    <li>Curso 3</li>
+                    <li>Curso 4</li>
+                    <li>Curso 5</li>
+                    <li>Curso 6</li>
+                </ul>
+                
+                <div class="imagem-container">
+                    <img src="https://via.placeholder.com/800x400?text=IMAGEM+3" alt="Imagem 3">
+                    <p class="imagem-info">INFORMAÇÃO DA IMAGEM 3</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Página 5 - Campus -->
+        <div id="campus" class="pagina">
+            <header>
+                <div class="logo">NOME DA INSTITUIÇÃO</div>
+                <div class="menu">
+                    <button class="btn btn-voltar" onclick="mostrarPagina('sobre')">P. VOLTAR</button>
+                    <button class="btn btn-primary" onclick="mostrarPagina('home')">MENU</button>
+                </div>
+            </header>
+            
+            <div class="main-content">
+                <h2>CAMPUS [BOTÃO 3]</h2>
+                <ul class="lista-campus">
+                    <li>ESTADO / CIDADE / ENDEREÇO</li>
+                    <li>ESTADO / CIDADE / ENDEREÇO</li>
+                    <li>ESTADO / CIDADE / ENDEREÇO</li>
+                    <li>ESTADO / CIDADE / ENDEREÇO</li>
+                </ul>
+                
+                <div class="imagem-container">
+                    <img src="https://via.placeholder.com/800x400?text=IMAGEM+4" alt="Imagem 4">
+                    <p class="imagem-info">INFORMAÇÃO DA IMAGEM 4</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2023 Nome da Instituição. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    
+    <script>
+        function mostrarPagina(paginaId) {
+            // Esconde todas as páginas
+            document.querySelectorAll('.pagina').forEach(pagina => {
+                pagina.classList.remove('ativa');
+            });
+            
+            // Mostra a página selecionada
+            document.getElementById(paginaId).classList.add('ativa');
+        }
+    </script>
+</body>
+</html>
